@@ -1,0 +1,14 @@
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.csproj.AssemblyReference.cache
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.AssemblyInfoInputs.cache
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.AssemblyInfo.cs
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.csproj.CoreCompileInputs.cache
+/Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net7.0-windows/Seagull.deps.json
+/Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net7.0-windows/Seagull.runtimeconfig.json
+/Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net7.0-windows/Seagull.gha
+/Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net7.0-windows/Seagull.pdb
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.gha
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/refint/Seagull.gha
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.pdb
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.genruntimeconfig.cache
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/ref/Seagull.gha

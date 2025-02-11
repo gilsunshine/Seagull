@@ -1,0 +1,9 @@
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.csproj.AssemblyReference.cache
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.AssemblyInfoInputs.cache
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.AssemblyInfo.cs
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.csproj.CoreCompileInputs.cache
+/Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net48/Seagull.gha
+/Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net48/Seagull.pdb
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.gha
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.pdb
