@@ -7,3 +7,4 @@
 /Users/gilsunshine/Documents/dev/Seagull/bin/Debug/net48/Seagull.pdb
 /Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.gha
 /Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.pdb
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net48/Seagull.sourcelink.json

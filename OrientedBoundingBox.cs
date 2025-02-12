@@ -13,7 +13,7 @@ using Seagull.CGAL.Wrapper;
 
 namespace Seagull
 {
-  public class OrientedBoundingBox : GH_Component
+  public class OrientedBoundingBox : GH_TaskCapableComponent<OrientedBoundingBox.SolveResults>
   {
     /// <summary>
     /// Each implementation of GH_Component must provide a public 
@@ -24,8 +24,8 @@ namespace Seagull
     /// </summary>
     public OrientedBoundingBox()
       : base("Oriented Bounding Box", "OBB",
-        "Oriented bounding box of a mesh.",
-        "Seagull", "Polygon Mesh Processing")
+        "Computes the oriented bounding box of a mesh or meshes.",
+        "Mesh", "Analysis")
     {
     }
 
@@ -35,7 +35,7 @@ namespace Seagull
     protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
     {
       
-      pManager.AddMeshParameter("Meshes", "M", "Input mesh(es) for oriented bounding boxes.", GH_ParamAccess.list);
+      pManager.AddMeshParameter("Mesh", "M", "Input mesh or meshes for calculation.", GH_ParamAccess.item);
 
     }
 
@@ -44,7 +44,7 @@ namespace Seagull
     /// </summary>
     protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
     {
-      pManager.AddBrepParameter("OBBs", "OBBs", "The bounding boxes as breps.", GH_ParamAccess.list);
+      pManager.AddBrepParameter("Oriented Bounding Box", "OBB", "The computed bounding boxes as breps.", GH_ParamAccess.item);
     }
 
     /// <summary>
@@ -52,25 +52,45 @@ namespace Seagull
     /// </summary>
     /// <param name="DA">The DA object can be used to retrieve data from input parameters and 
     /// to store data in output parameters.</param>
+    public class SolveResults
+    {
+      public Brep BoundingBox { get; set;}
+    }
+
+    private static SolveResults ComputeBoundingBox(Mesh mesh){
+      SolveResults result = new SolveResults();
+      result.BoundingBox = PolygonMeshProcessing.ObbAsBrep(mesh);
+      return result;
+    }
+
     protected override void SolveInstance(IGH_DataAccess DA)
     {
 
-      List<Mesh> meshes = new List<Mesh>();
-      List<Brep> boundingBoxes = new List<Brep>();
-
-      if (!DA.GetDataList(0, meshes))
+      if (InPreSolve)
       {
-          return;
+        Mesh mesh = null;
+        DA.GetData(0, ref mesh);
+        TaskList.Add(Task.Run(() => ComputeBoundingBox(mesh), CancelToken));
+        return;
       }
 
-       Parallel.For(0, meshes.Count,
-        i => {
-          boundingBoxes.Add(PolygonMeshProcessing.ObbAsBrep(meshes[i]));
-        });
+      if (!GetSolveResults(DA, out SolveResults result))
+      {
+        Mesh mesh = null;
+        if (!DA.GetData(0, ref mesh))
+          return;
+        result = ComputeBoundingBox(mesh);
+      }
 
-      DA.SetDataList(0, boundingBoxes);
+      if (null != result)
+      {
+        DA.SetData(0, result.BoundingBox);
+      }
 
     }
+
+    public override GH_Exposure Exposure => GH_Exposure.primary | GH_Exposure.obscure;
+
 
     /// <summary>
     /// Provides an Icon for every component that will be visible in the User Interface.
@@ -78,13 +98,13 @@ namespace Seagull
     /// You can add image files to your project resources and access them like this:
     /// return Resources.IconForThisComponent;
     /// </summary>
-    protected override System.Drawing.Bitmap Icon => null;
+    protected override System.Drawing.Bitmap Icon => IconLoader.ObbIcon;
 
     /// <summary>
     /// Each component must have a unique Guid to identify it. 
     /// It is vital this Guid doesn't change otherwise old ghx files 
     /// that use the old ID will partially fail during loading.
     /// </summary>
-    public override Guid ComponentGuid => new Guid("74747e0b-8a61-424e-80eb-33a7205d998e");
+    public override Guid ComponentGuid => new Guid("45e25ba0-0a9d-4748-b62b-af322f2ede3e");
   }
 }

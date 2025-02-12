@@ -12,3 +12,4 @@
 /Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.pdb
 /Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.genruntimeconfig.cache
 /Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/ref/Seagull.gha
+/Users/gilsunshine/Documents/dev/Seagull/obj/Debug/net7.0-windows/Seagull.sourcelink.json

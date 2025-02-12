@@ -42,4 +42,8 @@
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" ExcludeAssets="runtime" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="obb_icon.png" />
+  </ItemGroup>
+
 </Project>
