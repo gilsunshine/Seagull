@@ -10,7 +10,6 @@ using Rhino.Geometry;
 
 using Seagull.CGAL.Wrapper;
 
-
 namespace Seagull
 {
   public class OrientedBoundingBox : GH_TaskCapableComponent<OrientedBoundingBox.SolveResults>
@@ -90,7 +89,6 @@ namespace Seagull
     }
 
     public override GH_Exposure Exposure => GH_Exposure.primary | GH_Exposure.obscure;
-
 
     /// <summary>
     /// Provides an Icon for every component that will be visible in the User Interface.
